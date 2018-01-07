@@ -9,9 +9,9 @@ RSpec.describe Order, type: :model do
     expect(order.customer).to be_kind_of(Customer)
   end
 
-  it 'Tem 3 pedidos' do
-    orders = create_list(:order,3)
-    expect(orders.count).to eq(3)
+  it 'Tem 2 pedidos' do
+    orders = create_pair(:order)
+    expect(orders.count).to eq(2)
   end
   it 'has_many' do
     # customer =create(:customer, :with_orders) #Utilizando o default da factory
