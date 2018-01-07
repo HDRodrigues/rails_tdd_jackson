@@ -34,4 +34,12 @@ RSpec.describe Customer, type: :model do
 
   #Teste se o customer foi acrescentado em 1
   it {expect{create(:customer)}.to change {Customer.all.size}.by(1) }
+
+  it 'Cliente Masculino' do
+    customer = create(:customer_male_vip)
+    expect(customer.gender).to eq('M')
+    expect(customer.vip).to eq(true)
+  end
+
+
 end
