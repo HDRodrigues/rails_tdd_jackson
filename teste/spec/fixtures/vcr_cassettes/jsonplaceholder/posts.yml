@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://jsonplaceholder.typicode.com/posts/2
+    uri: "<API_URL>/posts/2"
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 07 Jan 2018 19:33:05 GMT
+      - Sun, 07 Jan 2018 20:24:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,8 +27,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=df3799c29b763e7ccc54776188587d7481515353585; expires=Mon, 07-Jan-19
-        19:33:05 GMT; path=/; domain=.typicode.com; HttpOnly
+      - __cfduid=da170913e858d9355cd59f63b3c27b12c1515356647; expires=Mon, 07-Jan-19
+        20:24:07 GMT; path=/; domain=.typicode.com; HttpOnly
       X-Powered-By:
       - Express
       Vary:
@@ -40,7 +40,7 @@ http_interactions:
       Pragma:
       - no-cache
       Expires:
-      - Sun, 07 Jan 2018 23:33:05 GMT
+      - Mon, 08 Jan 2018 00:24:07 GMT
       X-Content-Type-Options:
       - nosniff
       Etag:
@@ -52,7 +52,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 3d9958c3792a4a66-GRU
+      - 3d99a3875e404b15-GRU
     body:
       encoding: ASCII-8BIT
       string: |-
@@ -63,5 +63,5 @@ http_interactions:
           "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
         }
     http_version: 
-  recorded_at: Sun, 07 Jan 2018 19:33:05 GMT
+  recorded_at: Sun, 07 Jan 2018 20:24:07 GMT
 recorded_with: VCR 4.0.0
