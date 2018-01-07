@@ -5,8 +5,8 @@ RSpec.describe Customer, type: :model do
   #fixtures :customers
 
   it 'Create a Customer' do
-    #customer = customers(:jackson) #Utilizando fixtures
     customer = create(:customer) #Utilizando factoryBot
+    puts customer.email # Utilizando sequence
     expect(customer.full_name).to start_with("Sr.")
   end
 
