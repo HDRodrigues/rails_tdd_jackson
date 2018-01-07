@@ -1,0 +1,32 @@
+require 'rails_helper'
+
+RSpec.describe Customer, type: :model do
+  
+  #fixtures :customers
+
+  it 'Create a Customer' do
+    #customer = customers(:jackson) #Utilizando fixtures
+    customer = create(:customer) #Utilizando factoryBot
+    expect(customer.full_name).to start_with("Sr.")
+  end
+
+
+  it '#full_name - Sobrescrevendo atributo' do
+    customer = create(:user, name: "Jackson Pires") #Utilizando factoryBot
+    expect(customer.full_name).to eq("Sr. Jackson Pires")
+  end
+
+  it '#Heranca factory' do
+    customer = create(:customer_vip)
+    expect(customer.vip).to be_truthy
+  end
+
+  it 'Usando o attributes_for' do
+    attrs= attributes_for(:customer)
+    puts attrs
+  end
+
+
+  #Teste se o customer foi acrescentado em 1
+  it {expect{create(:customer)}.to change {Customer.all.size}.by(1) }
+end
