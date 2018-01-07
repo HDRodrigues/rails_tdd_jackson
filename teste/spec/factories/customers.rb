@@ -8,7 +8,8 @@ FactoryBot.define do
         
         name {Faker::Name.name}
         #email {Faker::Internet.email}
-        
+        address {Faker::Address.street_address}
+
         #sequence(:email,32) {|n| "meu_email-#{n}@email.com"} forcando 32 na sequence
         sequence(:email) {|n| "meu_email-#{n}@email.com"}
 
