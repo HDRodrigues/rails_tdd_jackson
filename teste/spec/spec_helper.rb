@@ -25,6 +25,9 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  
+  #Config para rodar os testes em ordem aleatoria
+  config.order = "random"
 
   #FactoryBot Lint
   config.before(:suite) do
