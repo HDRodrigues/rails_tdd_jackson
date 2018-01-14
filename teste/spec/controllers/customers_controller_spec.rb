@@ -1,13 +1,46 @@
 require 'rails_helper'
 
 RSpec.describe CustomersController, type: :controller do
-    it 'Responde successfully' do
-        get :index
-        expect(response).to be_success
+    describe 'as a Guest Member' do
+        context '#index' do
+            it 'Responde successfully' do
+                get :index
+                expect(response).to be_success
+            end
+            
+            it 'Responde 200' do
+                get :index
+                expect(response).to have_http_status(200)
+            end
+        end
     end
 
-    it 'Responde 200' do
-        get :index
-        expect(response).to have_http_status(200)
+    describe 'as a Logged Member' do
+        context '#show' do
+            it '#show - 302 (not authorized)' do
+                customer = create(:customer)
+                get :show, params: {id: customer.id}
+                expect(response).to have_http_status(302)
+            end
+            
+            it '#show - 200 authorized' do
+                member = create(:member)
+                customer = create(:customer)
+                sign_in member
+                
+                get :show , params: { id: customer.id}
+                expect(response).to have_http_status(200)
+            end
+
+            it '#show - render template' do
+                member = create(:member)
+                customer = create(:customer)
+                sign_in member
+                
+                get :show , params: { id: customer.id}
+                expect(response).to render_template(:show)
+            end
+        end
     end
+
 end
