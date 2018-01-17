@@ -54,6 +54,14 @@ RSpec.describe CustomersController, type: :controller do
                 get :show , params: { id: @customer.id}
                 expect(response).to render_template(:show)
             end
+
+
+            it 'Content-Type' do
+                customer_params = attributes_for(:customer)
+                sign_in @member
+                post :create,format: :json, params: {customer: customer_params}
+                expect(response.content_type).to eq('application/json')
+            end
         end
     end
 
